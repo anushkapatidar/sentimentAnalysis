@@ -8,3 +8,6 @@ plotly
 kaggle
 spacy
 flask
+wheel setuptools
+preshed --no-deps
+--only-binary :all: preshed
