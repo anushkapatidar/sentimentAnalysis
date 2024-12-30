@@ -1,13 +1,13 @@
-pandas
+--find-links https://download.pytorch.org/whl/torch_stable.html
+--find-links https://gases.anthropic.com/claude/wheels
 numpy
+preshed
+spacy
+pandas
 nltk
 scikit-learn
 matplotlib
 seaborn
 plotly
 kaggle
-spacy
 flask
-wheel setuptools
-preshed --no-deps
---only-binary :all: preshed
