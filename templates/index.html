@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px 10px 20px 10px ;
+            
+            margin-top: 80px;
+            
+        }
+        .tagHeading{
+            border-radius: 4px;
+            border: 5px solid rgb(155, 127, 127);
+            text-align: center;
+            font-size: 30px;
+            color: rgb(155, 127, 127);
+            padding: 20px 20px 20px 20px ;
+            
+        }
+     
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border-radius: 4px;
+            border: 5px solid rgb(155, 127, 127);
+            padding: 20px 20px 20px 20px;
+        }
+        textarea {
+            width: 95%;
+            height: 100px;
+            margin: 20px 20px 20px 10px ;
+            font-size: 20px;
+            /* padding: 10px; */
+            
+        }
+        button {
+            border-radius: 4px;
+            border: 4px solid rgb(155, 127, 127);
+            display: inline-block;
+            /* border: 40px solid rgb(155, 127, 127); */
+            padding: 10px 20px;
+            background-color: rgb(255, 255, 255);
+            color: rgb(155, 127, 127);
+            /* border: none; */
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 25px;
+            align-items: center;
+            width: 100%;
+
+            
+  transition-duration: 0.4s;
+            
+        }
+        .button:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+        .result {
+            display: none;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 30px;
+            text-align: center;
+            ;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tagHeading"><h1>Sentiment Analysis</h1></div>
+        <form id="sentiment-form">
+            <textarea id="text-input" placeholder="Enter your text here..."></textarea>
+            <button style="align-items: center;" type="submit">Analysis</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("sentiment-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const text = document.getElementById("text-input").value;
+            const response = await fetch("/predict", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: `text=${encodeURIComponent(text)}`,
+            });
+                const result = await response.json();
+                const sentiment = result.sentiment;
+
+                const resultElement = document.getElementById("result");
+                resultElement.innerText = `Sentiment: ${sentiment}`;
+                resultElement.style.display = "block";
+
+                if (sentiment === "Positive") {
+                resultElement.style.color = "green"; 
+                } else if (sentiment === "Negative") {
+                resultElement.style.color = "red";
+                } else {
+                resultElement.style.color = "gray"; 
+                }
+        });
+    </script>
+</body>
+</html>
