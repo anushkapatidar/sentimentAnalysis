@@ -1,0 +1,12 @@
+[build]
+  command = """
+    pip install -U pip &&
+    pip install wheel setuptools &&
+    pip install -r requirements.txt &&
+    python -m spacy download en_core_web_sm
+  """
+  publish = "build"
+
+[build.environment]
+  PYTHON_VERSION = "3.10"
+  FORCE_REBUILD = 1
