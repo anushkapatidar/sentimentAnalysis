@@ -1,7 +1,5 @@
 [build]
   command = """
-    pip install wheel setuptools &&
-    pip install -r requirements.txt &&
     python -m spacy download en_core_web_sm
   """
   publish = "build"
