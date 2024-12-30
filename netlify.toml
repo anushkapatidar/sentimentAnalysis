@@ -1,8 +1,0 @@
-[build]
-  command = """
-    python -m spacy download en_core_web_sm
-  """
-  publish = "build"
-
-[build.environment]
-  PYTHON_VERSION = "3.10"
