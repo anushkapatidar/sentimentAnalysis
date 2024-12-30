@@ -1,46 +1,13 @@
-
-# Core Data Processing & Analysis
-pandas
+--find-links https://download.pytorch.org/whl/torch_stable.html
+--find-links https://gases.anthropic.com/claude/wheels
 numpy
-scipy
-scikit-learn
-
-# NLP Tools
-nltk
-spacy
 preshed
-thinc
-cymem
-murmurhash
-
-# Visualization
+spacy
+pandas
+nltk
+scikit-learn
 matplotlib
 seaborn
 plotly
-
-# Web Framework
-flask
-gunicorn
-python-dotenv
-
-# Development Tools
-wheel
-setuptools
-pytest
-black
-flake8
-
-# Data Handling
 kaggle
-openpyxl
-python-dateutil
-pytz
-
-# Additional ML Libraries
-joblib
-scikit-image
-imbalanced-learn
-
-# Performance Optimization
-numba
-pandas-profiling
+flask
