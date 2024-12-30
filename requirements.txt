@@ -1,13 +1,46 @@
+
+# Core Data Processing & Analysis
 pandas
 numpy
-nltk
+scipy
 scikit-learn
+
+# NLP Tools
+nltk
+spacy
+preshed
+thinc
+cymem
+murmurhash
+
+# Visualization
 matplotlib
 seaborn
 plotly
-kaggle
-spacy
+
+# Web Framework
 flask
-wheel setuptools
-preshed --no-deps
---only-binary :all: preshed
+gunicorn
+python-dotenv
+
+# Development Tools
+wheel
+setuptools
+pytest
+black
+flake8
+
+# Data Handling
+kaggle
+openpyxl
+python-dateutil
+pytz
+
+# Additional ML Libraries
+joblib
+scikit-image
+imbalanced-learn
+
+# Performance Optimization
+numba
+pandas-profiling
